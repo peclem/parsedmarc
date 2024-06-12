@@ -764,9 +764,9 @@ def parsed_aggregate_reports_to_csv_rows(reports):
                 if "selector" in dkim_result:
                     dkim_selectors.append(dkim_result["selector"])
                 dkim_results.append(dkim_result["result"])
-            row["dkim_domains"] = ",".join(map(to_str, dkim_domains))
-            row["dkim_selectors"] = ",".join(map(to_str, dkim_selectors))
-            row["dkim_results"] = ",".join(map(to_str, dkim_results))
+            row["dkim_domains"] = ";".join(map(to_str, dkim_domains))
+            row["dkim_selectors"] = ";".join(map(to_str, dkim_selectors))
+            row["dkim_results"] = ";".join(map(to_str, dkim_results))
             spf_domains = []
             spf_scopes = []
             spf_results = []
